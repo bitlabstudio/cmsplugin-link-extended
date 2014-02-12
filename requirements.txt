@@ -13,8 +13,8 @@ djangocms-utils==0.9.5
 South==0.8.1
 django-missing==0.1.11
 django-tagging==0.3.1
-cmsplugin_blog==1.1.2
--e git+git://github.com/mbrochh/simple-translation.git@91c98e0cb1a4150f0460855dea869ddd75aaf25e#egg=simple_translation
+-e git+https://github.com/fivethreeo/cmsplugin-blog.git#egg=cmsplugin_blog
+-e git+https://github.com/mbrochh/simple-translation.git@91c98e0cb1a4150f0460855dea869ddd75aaf25e#egg=simple_translation
 
 
 # ==============================================================
