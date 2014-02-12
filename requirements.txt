@@ -1,0 +1,31 @@
+# Install these requirements if you wish to contribute to this project.
+
+# ===========================================================================
+# Packages essential to this app. Needed by anyone who wants to use this app.
+# ===========================================================================
+django==1.4.3
+django-libs
+Pillow==1.7.8
+django-cms==2.3.5
+django-mptt==0.5.2
+django-sekizai==0.6.1
+djangocms-utils==0.9.5
+South==0.8.1
+django-missing==0.1.11
+django-tagging==0.3.1
+cmsplugin_blog==1.1.2
+-e git+git://github.com/mbrochh/simple-translation.git@91c98e0cb1a4150f0460855dea869ddd75aaf25e#egg=simple_translation
+
+
+# ==============================================================
+# Packages needed for running the tests. Needed by contributors.
+# ==============================================================
+Fabric
+factory-boy
+mock
+django-nose
+coverage
+django-coverage
+ipython
+ipdb
+flake8
