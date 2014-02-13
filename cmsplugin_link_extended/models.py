@@ -2,7 +2,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from cms.plugins.link.models import Link
+from djangocms_link.models import Link
 
 
 class LinkExtension(models.Model):

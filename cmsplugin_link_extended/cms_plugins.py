@@ -2,7 +2,8 @@
 from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
-from cms.plugins.link.cms_plugins import LinkPlugin
+# from cms.plugins.link.cms_plugins import LinkPlugin
+from djangocms_link.cms_plugins import LinkPlugin
 
 from .forms import CustomLinkForm
 from .models import LinkExtension

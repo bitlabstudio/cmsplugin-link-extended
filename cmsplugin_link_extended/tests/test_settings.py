@@ -65,23 +65,25 @@ EXTERNAL_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.sites',
 
+    'django_nose',
+
     # cms related apps
+    'djangocms_text_ckeditor',
     'cms',
     'sekizai',
     'mptt',
     'menus',
-    'cms.plugins.link',
+#     'cms.plugins.link',
+    'djangocms_link',
 
     # blog related apps
-    'cmsplugin_blog',
-    'djangocms_utils',
-    'simple_translation',
+#     'multilingual_news',
     'tagging',
     'missing',
+    'filer',
 ]
 
 INTERNAL_APPS = [
-    'django_nose',
     'cmsplugin_link_extended.tests.test_app',
     'cmsplugin_link_extended',
 ]
@@ -90,19 +92,19 @@ INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS
 
 COVERAGE_MODULE_EXCLUDES += EXTERNAL_APPS
 
-MIDDLEWARE_CLASSES = [
-    'django.middleware.common.CommonMiddleware',
+MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'cms.middleware.multilingual.MultilingualURLMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.doc.XViewMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'simple_translation.middleware.MultilingualGenericsMiddleware',
-    'cmsplugin_blog.middleware.MultilingualBlogEntriesMiddleware',
-]
+    'cms.middleware.language.LanguageCookieMiddleware',
+)
 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -111,6 +113,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
 )
@@ -118,3 +121,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 JQUERY_JS = 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'
 JQUERY_UI_JS = 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js'  # NOQA
 JQUERY_UI_CSS = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css'  # NOQA
+
+SECRET_KEY = 'foobar'
