@@ -24,7 +24,6 @@ class CustomLinkForm(LinkForm):
             else:
                 self.initial['css_classes'] = extension.css_classes
 
-
     def save(self, *args, **kwargs):
         instance = super(CustomLinkForm, self).save(*args, **kwargs)
         instance.save()

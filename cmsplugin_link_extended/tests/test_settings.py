@@ -73,11 +73,9 @@ EXTERNAL_APPS = [
     'sekizai',
     'mptt',
     'menus',
-#     'cms.plugins.link',
     'djangocms_link',
 
     # blog related apps
-#     'multilingual_news',
     'tagging',
     'missing',
     'filer',
