@@ -9,6 +9,9 @@ def read(fname):
     except IOError:
         return ''
 
+dependency_links = [
+    'https://github.com/divio/django-cms/tarball/3a09d5c39b3469e64aeecc0205a193f5b70c2061',  # NOQA
+]
 
 setup(
     name="cmsplugin-link-extended",
@@ -22,5 +25,9 @@ setup(
     author_email='mbrochh@gmail.com',
     url="https://github.com/bitmazk/cmsplugin-link-extended",
     packages=find_packages(),
+    install_requires=[
+        'django',
+    ],
+    dependency_links=dependency_links,
     include_package_data=True,
 )
