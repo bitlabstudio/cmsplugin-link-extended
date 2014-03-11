@@ -2,16 +2,11 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from cms.plugins.link.models import Link
+from djangocms_link.models import Link
 
 
-class LinkExtension(models.Model):
+class LinkExtended(Link):
     """This model extends the original Link model."""
-    link = models.ForeignKey(
-        Link,
-        verbose_name=_('Link'),
-        related_name='extensions',
-    )
 
     css_classes = models.CharField(
         max_length=256,
